@@ -29,7 +29,7 @@ $ php artisan migrate --seed
 
 ### Import Table obat dan signa
 
-Import table obatalkes_m dan signa_m pada database yang telah dibuat
+Import file sql 'obatalkes_m' dan 'signa_m' pada database yang telah dibuat
 
 ### Menjalankan aplikasi
 
