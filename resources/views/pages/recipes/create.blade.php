@@ -266,7 +266,7 @@
         <button
           class="w-full px-4 pt-1.5 pb-2 text-md font-medium leading-5 text-white transition-colors duration-150 bg-cyan-600 border border-transparent rounded-md active:bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:shadow-outline-cyan"
         >
-          Tambah Resep
+          Simpan Resep
         </button>
       </div>
     </form>

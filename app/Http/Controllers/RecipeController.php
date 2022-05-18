@@ -7,6 +7,7 @@ use App\Models\Recipe;
 use App\Models\RecipeDetail;
 use App\Models\Signa;
 use Illuminate\Http\Request;
+use PDF;
 
 class RecipeController extends Controller
 {
@@ -19,6 +20,12 @@ class RecipeController extends Controller
         $recipe = Recipe::with('recipeDetails.drug')->find($id);
 
         return view('pages.recipes.show', compact('recipe'));
+    }
+    public function export($id) {
+        $recipe = Recipe::with('recipeDetails.drug')->find($id);
+        $pdf = PDF::loadView('pages.recipes.export-detail', compact('recipe'));
+        // download PDF file with download method
+        return $pdf->download('resep.pdf');
     }
     public function create() {
         $drugs = Drug::all();

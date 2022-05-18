@@ -8,6 +8,16 @@
     >
       Detail Resep
     </h2>
+
+    <a href="{{Route('recipes.export', $recipe->id)}}">
+      <button
+        type="button"
+        class="px-4 pt-1.5 pb-2 text-md font-medium leading-5 text-white transition-colors duration-150 bg-cyan-600 border border-transparent rounded-md active:bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:shadow-outline-green"
+      >
+        <i class="fas fa-print"></i>
+        Cetak Resep
+      </button>
+    </a>
   </div>
 
   <div
@@ -53,12 +63,12 @@
   </div>
   
   <div class="border-b-2 pb-6 mb-6">
-    <h3 class="mb-4 text-xl font-semibold text-gray-700">Obat</h3>
+    <h3 class="mb-4 text-xl font-semibold text-gray-700">{{$recipe->is_concoction ? $recipe->concoction_name : 'Obat'}}</h3>
 
     <div class="grid grid-cols-6 border-b-2 mb-6 form-obat">
-      <h2 class="px-4 py-3 col-span-3">Obat</h2>
-      <h2 class="px-4 py-3">Qty</h2>
-      <h2 class="px-4 py-3 col-span-2">Signa</h2>
+      <h2 class="px-4 py-3 font-bold col-span-3">Obat</h2>
+      <h2 class="px-4 py-3 font-bold">Qty</h2>
+      <h2 class="px-4 py-3 font-bold col-span-2">Signa</h2>
 
       @foreach ($recipe->recipeDetails as $detail)
         <div class="px-4 py-3 col-span-3">
